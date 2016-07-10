@@ -218,6 +218,7 @@ cfg_if! {
         extern {}
     } else if #[cfg(any(target_os = "macos",
                         target_os = "ios",
+                        target_os = "avery",
                         target_os = "android",
                         target_os = "openbsd",
                         target_os = "bitrig"))] {
@@ -850,6 +851,9 @@ cfg_if! {
                         target_os = "bitrig"))] {
         mod bsd;
         pub use self::bsd::*;
+    } else if #[cfg(target_os = "avery")] {
+        mod avery;
+        pub use self::avery::*;
     } else if #[cfg(target_os = "solaris")] {
         mod solaris;
         pub use self::solaris::*;
