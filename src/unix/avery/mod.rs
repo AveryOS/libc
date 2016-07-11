@@ -1,3 +1,9 @@
+
+pub const IPV6_ADD_MEMBERSHIP: ::c_int = 12;
+pub const IPV6_DROP_MEMBERSHIP: ::c_int = 13;
+
+pub const FIOCLEX: ::c_int = 0x20006601;
+
 pub type c_char = i8;
 pub type c_long = i64;
 pub type c_ulong = u64;
@@ -155,6 +161,7 @@ s! {
     pub struct dirent {
         pub d_ino: ::ino_t,
         pub d_off: ::off_t,
+        pub d_type: u8,
         pub d_reclen: u16,
         pub d_name: [::c_char; 1]
     }
